@@ -51,7 +51,7 @@ const About = () => {
   );
 };
 
-const AboutContainer = styled.div`
+const AboutContainer = styled.section`
   max-width: 1080px;
   margin: 0 auto;
   position: relative;
@@ -66,7 +66,7 @@ const AboutContainer = styled.div`
     font-weight: bold;
     letter-spacing: 0.05em;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--white-pearl);
   }
 `;
 
@@ -83,9 +83,13 @@ const AboutInner = styled.div`
   .about-media {
     padding: 0.8em;
     border-radius: 0.7em;
-    box-shadow: 0px 4px 22px  var(--petrol);
+    border: 1px solid var(--petrol);
+    background-color: hsla(0, 25%, 21%, 0.4);
 
-    background-color: hsla(0, 25%, 21%, 0.3);
+    &:hover {
+      box-shadow: 0px 2px 14px var(--petrol);
+    }
+
   }
 
   .about-media:hover .about-media__img {

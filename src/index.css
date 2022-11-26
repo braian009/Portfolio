@@ -1,15 +1,21 @@
 :root {
   box-sizing: border-box;
   font-size: calc(0.6em + 1vw);
-  --font-color: #b1abab;
+  --title-color: hsl(0, 7%, 71%);
+  --font-color: #aea7a7;
   --bordo: rgb(109, 66, 66);
   --obscure-bordo: hsl(0, 25%, 21%);
+  --purple: #49182d;
+  --petrol: hsl(182, 44%, 14%);
+  --bordoo: #43282866;
 
   --blue: hsl(193, 25%, 34%);
   --yelloww: hsl(67, 40%, 30%);
   --another: hsl(13, 25%, 34%);
-  --petrol: hsl(182, 100%, 11%);
+  /* --petrol: hsl(182, 100%, 11%); */
   --obscure-petrol: hsla(182, 44%, 11%, 0.5);
+  --white-pearl: #e2dfd2;
+  --black: #1e50ff;
 }
 @media (min-width: 50em) {
   :root {
@@ -28,10 +34,18 @@ body {
   line-height: 1.25;
   margin: 0;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to top,
     hsl(204, 3%, 17%),
     hsl(204, 1%, 15%)
-  );
+  ); */
+  background-color: hsl(204, 3%, 15%);
   color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
 }

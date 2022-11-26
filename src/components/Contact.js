@@ -10,12 +10,12 @@ const Contact = () => {
       <ContactInner>
         <ul className="contact-sidebar">
           <li>
-            <a className="contact-sidebar-link" href="/">
+            <a className="contact-sidebar__link" href="/">
               <img src={LinkedinLogo} alt="react"></img>
             </a>
           </li>
           <li>
-            <a className="contact-sidebar-link" href="/">
+            <a className="contact-sidebar__link" href="/">
               <img src={WhatsappLogo} alt="whatsapp"></img>
             </a>
           </li>
@@ -34,10 +34,10 @@ const Contact = () => {
     </ContactContainer>
   );
 };
-const ContactContainer = styled.div`
+const ContactContainer = styled.section`
   max-width: 1080px;
   margin: 0 auto;
-  padding-top: 2.5em;
+  padding-top: 2em;
   margin-bottom: 1.5em;
 
 
@@ -60,11 +60,16 @@ const ContactContainer = styled.div`
 const ContactInner = styled.div`
   margin: 0 auto;
   display: flex;
-  width: 70%;
+  width: 80%;
+  max-width: 550px;
   flex-direction: column;
   border-radius: .7em;
-  background-color: hsla(0, 0%, 0%, 0.2);
-  box-shadow: 0px 4px 22px  var(--petrol);
+  /* background-color: hsla(182, 25%, 16%, 0.4); */
+  background-image: linear-gradient(to top, hsla(182, 25%, 16%, 0.4), transparent);
+  border: 1px solid var(--teal-blue);
+  box-shadow: 0 15px 22px hsla(0, 0%, 0%,0.6);
+
+
 
 
   padding: 1.5em;
@@ -77,18 +82,23 @@ const ContactInner = styled.div`
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    border-bottom: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--white-pearl);
 
     li {
-      flex: 0 0 50px;
-      height: 50px;
+      flex: 0 0 45px;
+      height: 45px;
       margin: 0 0.5em;
     }
 
-    a {
+    .contact-sidebar__link {
       display: block;
       max-width: 100%;
       margin: 0 auto;
+      transition: all .2s ease-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -112,10 +122,14 @@ const ContactInner = styled.div`
     }
 
     input {
+      font-size: 1rem;
       margin-top: 0.3em;
       width: 100%;
       background: transparent;
-      border: 1px solid var(--font-color);
+      color: var(--font-color);
+      line-height: 1.5;
+      border: none;
+      border-bottom: 1px solid var(--font-color);
       outline: none;
     }
 
@@ -123,11 +137,15 @@ const ContactInner = styled.div`
       width: 100%;
       margin-top: 0.3em;
       background: transparent;
-      border: 1px solid var(--font-color);
+      color: var(--font-color);
+      line-height: 1.5;
+      border: none;
+      border-bottom: 1px solid var(--font-color);
       outline: none;
     }
 
     button {
+      width: 100%;
       background-color: inherit;
       border: 1px solid var(--font-color);
       padding: 1em 1.5em;
@@ -139,12 +157,6 @@ const ContactInner = styled.div`
     }
   }
 
-  @media (min-width: 40em) {
-    width: 380px;
-  }
-  @media (min-width: 50em) {
-    width: 420px;
-  }
 `;
 
 export default Contact;

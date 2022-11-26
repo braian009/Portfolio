@@ -51,13 +51,13 @@ const Skills = () => {
   );
 };
 
-const SkillsContainer = styled.div`
+const SkillsContainer = styled.section`
   max-width: 1080px;
   margin: 0 auto;
   min-height: 400px;
   margin-bottom: 1.5em;
 
-  padding-top: 2.5em;
+  padding-top: 2em;
 `;
 
 const SkillsInner = styled.div`
@@ -67,7 +67,7 @@ const SkillsInner = styled.div`
     font-weight: bold;
     letter-spacing: 0.05em;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--font-color);
+    border-bottom: 1px solid var(--white-pearl);
   }
 
   .skills-info__text {
@@ -75,7 +75,12 @@ const SkillsInner = styled.div`
   }
 
   .skills-info__list {
-    background-color: hsla(0, 0%, 0%, 0.2);
+    background-image: linear-gradient(
+      to left,
+      hsla(0, 25%, 21%, 0.4),
+      transparent,
+      hsla(0, 25%, 21%, 0.4)
+    );
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 1fr;
@@ -87,13 +92,7 @@ const SkillsInner = styled.div`
     border-radius: 0.4em;
     margin: 0 auto;
     margin-top: 1.5em;
-    box-shadow: 0px 4px 22px  var(--petrol);
-    transition: all 0.4s ease-out;
-
-    &:hover {
-      transform: translateY(-5px);
-    box-shadow: 0px 8px 32px 0px var(--petrol);
-    }
+    border: 1px solid var(--petrol);
 
     * {
       text-align: center;
