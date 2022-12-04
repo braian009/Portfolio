@@ -1,5 +1,5 @@
 import * as React from "react";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -8,45 +8,63 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Arrow from "./components/arrow-up.svg";
 
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
-
+import "./App.css";
 
 const App = () => {
+  const revealComponents = async () => {
+    const hiddenElements = await document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("shown");
+        } else {
+          entry.target.classList.remove("shown");
+        }
+      });
+    });
+
+    hiddenElements.forEach((element) => {
+      observer.observe(element);
+    });
+  };
 
   React.useEffect(() => {
     revealArrow();
+    revealComponents();
   });
+
   const revealArrow = () => {
     window.onscroll = () => {
-      const arrow = document.querySelector('.arrow-up');
-      const secondSection = document.querySelectorAll('section')[1];
+      const arrow = document.querySelector(".arrow-up");
+      const secondSection = document.querySelectorAll("section")[1];
       const revealPoint = secondSection.getBoundingClientRect().top + 650;
 
       if (revealPoint < window.innerHeight) {
-        arrow.classList.add('shown');
+        arrow.classList.add("shown");
       } else {
-        arrow.classList.remove('shown');
+        arrow.classList.remove("shown");
       }
-    }
+    };
+  };
 
-  }
   return (
     <>
-      <NavBar/>
-      <Hero/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Contact/>
-      <Footer/>
-      <Link to='#top' smooth>
-      <ArrowLink className="arrow-up">
-        <img src={Arrow} alt='arrow-up'></img>
-      </ArrowLink>
+      <NavBar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+      <Link to="#top" smooth>
+        <ArrowLink className="arrow-up">
+          <img src={Arrow} alt="arrow-up"></img>
+        </ArrowLink>
       </Link>
     </>
-      
   );
 };
 
@@ -60,7 +78,7 @@ const ArrowLink = styled.div`
   position: fixed;
   right: 1em;
   bottom: 1.5em;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   z-index: 100;
 
   img {
@@ -73,7 +91,5 @@ const ArrowLink = styled.div`
     opacity: 1;
   }
 `;
-
-
 
 export default App;

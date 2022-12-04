@@ -1,14 +1,20 @@
 import * as React from "react";
 import styled from "styled-components";
+import StartImg from '../start.svg';
+import PresentImg from '../present.svg';
+import FutureImg from '../future.svg';
 
 const About = () => {
   return (
-    <AboutContainer id="about">
+    <AboutContainer id="about" className='hidden'>
       <h3 className="about-title">About</h3>
 
       <AboutInner>
         <div className="about-media">
-          <div className="about-media__img"></div>
+          <div className="about-media__img">
+          <div className="img-start"></div>
+
+          </div>
           <div className="about-media__content">
             <h4>something</h4>
             <p>
@@ -21,7 +27,9 @@ const About = () => {
           </div>
         </div>
         <div className="about-media">
-          <div className="about-media__img"></div>
+          <div className="about-media__img">
+            <div className="img-present"></div>
+          </div>
           <div className="about-media__content">
             <h4>something</h4>
             <p>
@@ -34,7 +42,10 @@ const About = () => {
           </div>
         </div>
         <div className="about-media featured">
-          <div className="about-media__img"></div>
+          <div className="about-media__img">
+            <div className="img-future"></div>
+
+          </div>
           <div className="about-media__content">
             <h4>but... what about ............</h4>
             <p>
@@ -59,21 +70,23 @@ const AboutContainer = styled.section`
 
   padding-top: 2em;
 
-
   .about-title {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.05em;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid var(--white-pearl);
+    margin-bottom: 1.5em;
+
+    border-bottom: 1px solid var(--border-primary);
+    
   }
 `;
 
 const AboutInner = styled.div`
   display: grid;
   padding: 0;
-  width: 90%;
+  width: 95%;
   max-width: 890px;
   margin: 0 auto;
   grid-template-columns: 1fr;
@@ -81,47 +94,90 @@ const AboutInner = styled.div`
   gap: 1em;
 
   .about-media {
-    padding: 0.8em;
-    border-radius: 0.7em;
-    border: 1px solid var(--petrol);
-    background-color: hsla(0, 25%, 21%, 0.4);
+    padding: 0.5em;
+    /* border-radius: 0.7em; */
+    /* border: 1px solid var(--border-primary); */
+    /* background-color: hsla(0, 25%, 21%, 0.4); */
+    /* background: hsla(182, 44%, 14%, 0.1); */
+    /* background-color: hsla(5, 21%, 21%, 0.4); */
+  border-radius: 0.7em;
 
-    &:hover {
-      box-shadow: 0px 2px 14px var(--petrol);
-    }
+
+  background-image: linear-gradient(to right, hsla(5, 21%, 21%, 0.4), transparent);
+box-shadow:  4px 4px 11px #141414;
+
+    
 
   }
 
-  .about-media:hover .about-media__img {
-    transform: translateX(0);
-  }
+  
 
   .about-media__img {
     display: none;
-    width: 200px;
-    height: 150px;
-    border-radius: 0.7em;
-    transform: translateX(-2em);
-    transition: all 0.3s ease-out;
+    
   }
 
-  .about-media__content h4 {
+  .about-media__content {
+    flex: 1;
+    font-size: 0.95rem;
+    padding: .5em;
+
+     h4 {
     margin-top: 0;
     margin-bottom: 0.5em;
     letter-spacing: 0.06em;
   }
 
-  @media (min-width: 40em) {
+  }
+
+  
+
+  @media (min-width: 45em) {
+    
+    .about-media {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+    }
+
     .about-media__img {
       display: block;
-      float: left;
+      flex: 0 0 210px;
       margin-right: 1em;
-      background-color: var(--font-color);
+      border-radius: 0.7em;
+      height: 100%;
+
+    div {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .img-start {
+      background-image: url(${StartImg});
+    }
+
+    .img-present {
+      background-image: url(${PresentImg});
+    }
+
+    .img-future {
+      background-image: url(${FutureImg});
+
+    }
+
+
+
+      img {
+      width: 200px;
+      }
     }
 
     .about-media__content {
-      overflow: auto;
       margin: 0;
+      margin-left: 1em;
     }
   }
 
