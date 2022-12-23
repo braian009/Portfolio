@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Arrow from "./components/arrow-up.svg";
+import Arrow from "./assets/icons/arrow-up.svg";
 
 import { HashLink as Link } from "react-router-hash-link";
 import styled from "styled-components";
@@ -20,7 +20,8 @@ const App = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("shown");
-        } else {
+        }
+         else {
           entry.target.classList.remove("shown");
         }
       });
@@ -69,21 +70,29 @@ const App = () => {
 };
 
 const ArrowLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
   opacity: 0;
-  height: 50px;
-  width: 50px;
-  background-color: var(--obscure-bordo);
+  height: 45px;
+  width: 45px;
+  background-color: #432828;
   border-radius: 50%;
+  border: 1px solid var(--gray-secondary);
   position: fixed;
   right: 1em;
   bottom: 1.5em;
   transition: all 0.2s linear;
   z-index: 100;
+  background-color: hsla(5, 21%, 14%, 0.8);
+    backdrop-filter: blur(14.7px);
 
   img {
     max-width: 100%;
     border-radius: 50%;
+
+    
   }
 
   &.shown {

@@ -19,10 +19,10 @@ const NavMenu = styled.nav`
     overflow: hidden;
     transition: height 0.2s ease-out 0s;
 
-    background: rgba(67, 40, 40, 0.74);
+    background-color: hsla(5, 21%, 14%, 0.8);
+    backdrop-filter: blur(14.7px);
     border-bottom-right-radius: 0.7em;
     border-bottom-left-radius: 0.7em;
-    backdrop-filter: blur(10.7px);
 
     & a {
       font-size: 1.1rem;
@@ -31,20 +31,20 @@ const NavMenu = styled.nav`
       text-align: center;
       padding: 1em 1em;
       text-decoration: none;
-      transition: transform 0.3s ease-out 0s;
+      transition: transform 0.2s ease-out 0s;
     }
 
     & a:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
-    @media (max-width: 35em) {
+    @media (max-width: 40em) {
       li + li {
         margin-top: 1em;
       }
     }
 
-    @media (min-width: 35em) {
+    @media (min-width: 40em) {
       
         flex-direction: row;
         justify-content: space-between;

@@ -10,9 +10,6 @@ const Navbar = () => {
 
   React.useEffect(() => {
     const menu = document.querySelector(".menu-list");
-    const height = menu.scrollHeight;
-
-    console.log(height);
 
     if (isActive) {
       menu.style.setProperty("height", `50vh`);
@@ -29,7 +26,7 @@ const Navbar = () => {
   return (
     <header>
       <NavbarContainer>
-        <div className="page-title">Portfolio</div>
+        <div className="nav-brand">Portfolio</div>
         <NavMenu className="nav-menu">
           <ul className={`menu-list ${isActive ? "is-active" : ""}`}>
             <li>
@@ -80,15 +77,16 @@ const NavbarContainer = styled.div`
   position: relative;
   
 
-  background-image: linear-gradient(to bottom, var(--obscure-petroll), transparent);
+  /* background-image: linear-gradient(to bottom, var(--obscure-petroll), transparent); */
   /* background-color: var(--obscure-petroll); */
 
 
   padding: 1.5em 1em;
   z-index: 10;
 
-  .page-title {
+  .nav-brand {
     font-size: 2.5rem;
+    letter-spacing: 0.02em;
   }
 `;
 

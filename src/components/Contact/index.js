@@ -1,8 +1,8 @@
 import * as React from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
-import LinkedinLogo from "../linkedin.svg";
-import WhatsappLogo from "../whatsapp.svg";
+import LinkedinLogo from "../../assets/icons/linkedin.svg";
+import WhatsappLogo from "../../assets/icons/whatsapp.svg";
 
 import ContactInner from "./ContactInner";
 
@@ -46,8 +46,6 @@ const Contact = () => {
 
   return (
     <ContactContainer id="contact" className="hidden">
-      <div className="thin-line-left"></div>
-      <div className="thin-line-right"></div>
       <h3 className="contact-title">Contact</h3>
       <ContactInner>
         <div
@@ -83,18 +81,18 @@ const Contact = () => {
         </div>
         <ul className="contact-sidebar">
           <li>
-            <a className="contact-sidebar__link" href="/">
+            <a className="contact-sidebar__link" href="https://linkedin.com/in/braian-yanquin-90446025b" target="_blank" rel="noopener noreferrer">
               <img src={LinkedinLogo} alt="react"></img>
             </a>
           </li>
           <li>
-            <a className="contact-sidebar__link" href="/">
+            <a className="contact-sidebar__link" href="https://wa.me/5492944700327" target="_blank" rel="noopener noreferrer">
               <img src={WhatsappLogo} alt="whatsapp"></img>
             </a>
           </li>
         </ul>
         <form className="contact-form" ref={formRef} onSubmit={onFormSubmit}>
-          <h4>Send me an email</h4>
+          <h4>Send me an email:</h4>
           <label htmlFor="user_email">email</label>
           <input
             required
@@ -117,7 +115,7 @@ const Contact = () => {
             required
             id="message"
             name="message"
-            rows="4"
+            rows="3"
             onChange={onInputChange}
             value={formContent.message}
           ></textarea>
@@ -143,8 +141,6 @@ const ContactContainer = styled.section`
   padding-top: 2em;
   margin-bottom: 1.5em;
 
-  min-height: 400px;
-
   img {
     width: 100%;
   }
@@ -153,10 +149,18 @@ const ContactContainer = styled.section`
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.05em;
-    padding-bottom: 0.3em;
+    letter-spacing: 0.08em;
     margin-bottom: 1.5em;
-    border-bottom: 1px solid var(--border-primary);
+
+    padding-top: 1.5em;
+
+    width: 10em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 2px solid var(--green-dark);
   }
 `;
 

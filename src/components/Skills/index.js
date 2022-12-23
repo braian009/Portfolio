@@ -1,53 +1,64 @@
 import * as React from "react";
 import styled from "styled-components";
-import ReactLogo from "../react.svg";
-import PythonLogo from "../python.svg";
-import JSLogo from "../javascript.svg";
-import DjangoLogo from "../django.svg";
-import PostgresLogo from "../postgres.svg";
+import ReactIcon from "../../assets/icons/react.svg";
+import PythonIcon from "../../assets/icons/python.svg";
+import JSIcon from "../../assets/icons/javascript.svg";
+import DjangoIcon from "../../assets/icons/django.svg";
 
 import ItemsGrid from "./ItemsGrid";
 import SkillsInner from "./SkillsInner";
 
+const skillsList = {
+  primary: [
+    { icon: ReactIcon, name: 'React' },
+    { icon: JSIcon, name: 'JavaScript' },
+    { icon: PythonIcon, name: 'Python' },
+    { icon: DjangoIcon, name: 'Django' },
+  ],
+  secondary: [
+    'Rest Framework',
+    'PostgreSQL',
+    'PgAdmin',
+    'Unittest',
+    'Git',
+    'Styled Components',
+    'Firebase',
+    'React Router',
+    'HTML5',
+    'CSS3',
+  ]
+}
+
 const Skills = () => {
   return (
-    <SkillsContainer id="skills" className='hidden'>
-        <h3 className="skills-title">Skills</h3>
+    <SkillsContainer id="skills" className="hidden">
+      <h3 className="skills-title">Skills</h3>
       <SkillsInner>
         <ItemsGrid>
-          <div className="skills-item">
-            <img src={ReactLogo} alt="react"></img>
+          {skillsList.primary.map((skill) => {
+            return (
+              <div className="skills-item">
+            <img src={skill.icon} alt={skill.name}></img>
           </div>
-          <div className="skills-item">
-            <img src={PythonLogo} alt="python"></img>
-          </div>
-          <div className="skills-item">
-            <img src={JSLogo} alt="javascript"></img>
-          </div>
-          <div className="skills-item">
-            <img src={DjangoLogo} alt="django"></img>
-          </div>
-          <div className="skills-item">
-            <img src={PostgresLogo} alt="postgres"></img>
-          </div>
+            )
+          })}
+          
         </ItemsGrid>
         <div className="skills-info">
           <div className="skills-info__text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            Those four, frameworks and their respective languages are the ones
+            I'm familiar with. For a moment I've tried Docker and Typescript as
+            major tools to implement, but not enough to consider those as
+            learned, sot they remain in the must-do list as well as real practice in terms of testing in react with RTL and Jest. Aside of that and in
+            addition of the former ones, here are some more tools which I
+            complement my skills with:
           </div>
           <div className="skills-info__list">
-            <div>jejejejeje</div>
-            <div>jejejejeje</div>
-            <div>jejejejeje</div>
-            <div>jejejejeje</div>
-            <div>jejejejeje</div>
-            <div>jejejejeje</div>
+            {skillsList.secondary.map((skill) => {
+              return <div>{skill}</div>
+            })}
           </div>
+
         </div>
       </SkillsInner>
     </SkillsContainer>
@@ -65,13 +76,19 @@ const SkillsContainer = styled.section`
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.05em;
-    padding-bottom: 0.3em;
+    letter-spacing: 0.08em;
     margin-bottom: 1.5em;
-    border-bottom: 1px solid var(--border-primary);
+    padding-top: 1.5em;
+    
+    width: 10em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 2px solid var(--green-dark);
   }
 `;
-
-
 
 export default Skills;

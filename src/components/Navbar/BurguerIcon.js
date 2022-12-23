@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 const BurgerIcon = styled.div`
   position: fixed;
-  top: 1.2em;
+  top: 1.5em;
   right: 1em;
   z-index: 100;
 
   .line {
     width: 35px;
     height: 5px;
-    background-color: var(--font-color);
+    background-color: var(--gray-secondary);
     display: block;
     margin: 8px auto;
     transition: all 0.3s ease-in-out;
@@ -36,7 +36,7 @@ const BurgerIcon = styled.div`
     transform: translateY(-13px) rotate(-45deg);
   }
 
-  @media (min-width: 35em) {
+  @media (min-width: 40em) {
     display: none;
   }
 `;

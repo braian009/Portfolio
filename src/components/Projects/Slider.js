@@ -1,40 +1,36 @@
 import * as React from "react";
 import styled from "styled-components";
 
-const Slider = ({ slides }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+const Slider = ({ projectList, index, onChangeSlider }) => {
 
   const toThePrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const isFirstSlide = index === 0;
+    const newIndex = isFirstSlide ? projectList.length - 1 : index - 1;
 
-    setCurrentIndex(newIndex);
+    onChangeSlider(newIndex);
   };
 
   const toTheNext = () => {
-    const isLastIndex = currentIndex === slides.length - 1;
-    const newIndex = isLastIndex ? 0 : currentIndex + 1;
+    const isLastIndex = index === projectList.length - 1;
+    const newIndex = isLastIndex ? 0 : index + 1;
 
-    setCurrentIndex(newIndex);
+    onChangeSlider(newIndex);
   };
 
   return (
-    <>
-      <SliderContainer className="slider">
-        <div className="slider-img">
-          <SliderImg url={`${slides[currentIndex].url}`}>
-            <LeftArrow onClick={toThePrevious}>❰</LeftArrow>
-            <RightArrow onClick={toTheNext}>❱</RightArrow>
-          </SliderImg>
-        </div>
-
+    <SliderContainer className="slider">
+      <SliderImg url={`${projectList[index].image}`}>
+        <LeftArrow onClick={toThePrevious}>❰</LeftArrow>
+        <RightArrow onClick={toTheNext}>❱</RightArrow>
         <div className="slider-points">
-          {slides.map((slide, slideIndex) => {
+          {projectList.map((project, projectIndex) => {
             return (
               <div
-                key={slideIndex}
-                className={currentIndex === slideIndex ? "active" : ""}
-                onClick={() => setCurrentIndex(slideIndex)}
+                key={projectIndex}
+                className={index === projectIndex ? "active" : ""}
+                onClick={() => {
+                  onChangeSlider(projectIndex);
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,47 +51,47 @@ const Slider = ({ slides }) => {
             );
           })}
         </div>
-      </SliderContainer>
-    </>
+      </SliderImg>
+    </SliderContainer>
   );
 };
 
 const SliderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   width: 100%;
-
-  .slider-img {
-    width: 100%;
-    height: 18em;
-  }
+  height: 18em;
+  border-radius: .7em;
 
   .slider-points {
-    margin-top: 0.5em;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
 
     div > svg {
       transition: all 0.3s ease-out;
-      fill: transparent;
-      stroke: var(--font-color);
+      fill: var(--gray-secondary);
+      stroke: none;
+      border-radius: 50%;
     }
 
     div {
+      height: 48px;
+
       &:hover {
         svg {
           transform: scale(1.1);
-          border-radius: 50%;
         }
       }
     }
 
     div.active {
       svg {
-        fill: var(--petrol);
         transform: scale(1.1);
       }
     }
@@ -110,6 +106,7 @@ const SliderImg = styled.div`
   background-size: cover;
   background-position: center;
   border-radius: 0.7em;
+  opacity: 0.7;
 `;
 
 const LeftArrow = styled.div`
@@ -119,13 +116,9 @@ const LeftArrow = styled.div`
   left: 0.3em;
   transform: translate(0, -50%);
   font-weight: bold;
-  color: black;
+  color: var(--gray-secondary);
   z-index: 1;
   cursor: pointer;
-
-  @media (min-width: 35em) {
-    display: none;
-  }
 `;
 
 const RightArrow = styled.div`
@@ -136,13 +129,10 @@ const RightArrow = styled.div`
   right: 0.3em;
   transform: translate(0, -50%);
   font-weight: bold;
-  color: black;
+  color: var(--gray-secondary);
   z-index: 1;
   cursor: pointer;
 
-  @media (min-width: 35em) {
-    display: none;
-  }
 `;
 
 export default Slider;

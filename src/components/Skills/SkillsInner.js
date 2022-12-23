@@ -3,18 +3,19 @@ import styled from "styled-components";
 const SkillsInner = styled.div`
 
 width: 90%;
+max-width: 890px;
+
 margin: 0 auto;
 
 
 
   .skills-info {
-    font-size: 0.95em;
     text-align: center;
-
     
   }
 
   .skills-info__text {
+    font-size: 0.95em;
     text-align: center;
 
     @media (min-width: 55em) {
@@ -33,8 +34,8 @@ margin: 0 auto;
     max-width: 580px;
     margin: 0 auto;
     margin-top: 1.5em;
-    border-bottom: 1px solid var(--petrol);
-    border-top: 1px solid var(--petrol);
+    border-bottom: 1px solid var(--green-dark);
+    border-top: 1px solid var(--green-dark);
 
     
   }

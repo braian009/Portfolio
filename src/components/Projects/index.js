@@ -1,45 +1,50 @@
 import * as React from "react";
 import styled from "styled-components";
-import IMAGES from "../../images";
+import projectList from "./projectList";
 
 import ProjectsInner from "./ProjectsInner";
 import Slider from "./Slider";
 
 const Projects = () => {
-  const slides = [...IMAGES];
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  console.log(projectList);
 
   return (
     <ProjectsContainer id="projects" className="hidden">
       <h3 className="projects-title">Projects</h3>
       <ProjectsInner>
-        <Slider slides={slides} />
+        <Slider
+          projectList={projectList}
+          index={currentIndex}
+          onChangeSlider={setCurrentIndex}
+        />
         <div className="projects-info">
-          <h4>Some title</h4>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has
-          </p>
+          <h4>{projectList[currentIndex].title}</h4>
+          <p>{projectList[currentIndex].description}</p>
           <div className="projects-technologies">
             <h4>Technologies</h4>
             <ul className="tag-list">
-              <li>
-                <div >React</div>
-              </li>
-              <li>
-                <div>Django</div>
-              </li>
-              <li>
-                <div >Django rest framework</div>
-              </li>
-              <li>
-                <div>firebase</div>
-              </li>
-              <li>
-                <div >something else</div>
-              </li>
+              {projectList[currentIndex].technologies.map((technology) => {
+                return (
+                  <li>
+                    <div>{technology}</div>
+                  </li>
+                );
+              })}
             </ul>
+          </div>
+          <div className="projects-links">
+            {projectList[currentIndex].codeUrl && (
+              <div>
+                <a href={`${projectList[currentIndex].codeUrl}`} target="_blank" rel="noopener noreferrer">Code</a>
+              </div>
+            )}
+            {projectList[currentIndex].demoUrl && (
+              <div>
+                <a href={`${projectList[currentIndex].demoUrl}`} target="_blank" rel="noopener noreferrer">Demo</a>
+              </div>
+            )}
           </div>
         </div>
       </ProjectsInner>
@@ -52,15 +57,24 @@ const ProjectsContainer = styled.section`
   margin: 0 auto;
   padding-top: 2em;
   margin-bottom: 1.5em;
+  position: relative;
 
   .projects-title {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.05em;
-    padding-bottom: 0.3em;
+    letter-spacing: 0.08em;
     margin-bottom: 1.5em;
-    border-bottom: 1px solid var(--border-primary);
+
+    padding-top: 1.5em;
+
+    width: 10em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 2px solid var(--green-dark);
   }
 `;
 

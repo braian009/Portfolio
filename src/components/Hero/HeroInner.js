@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const HeroInner = styled.div`
-  height: 100%;
-
   .hero-media {
     display: grid;
     grid-template-columns: 1fr;
@@ -10,7 +8,6 @@ const HeroInner = styled.div`
     gap: 1.5em;
     place-items: center;
 
-    height: 100%;
     width: 90%;
     margin: 0 auto;
 
@@ -18,8 +15,9 @@ const HeroInner = styled.div`
       width: 250px;
       height: 250px;
       border-radius: 50%;
-      box-shadow: 4px 4px 11px #141414;
 
+      border: 2px solid var(--green-dark);
+      box-shadow: 0px 0px 44px var(--black-secondary);
 
       .hero-img {
         width: 100%;
@@ -29,59 +27,67 @@ const HeroInner = styled.div`
     }
 
     .hero-greet {
-      /* border-bottom: 1px solid var(--font-color); */
-      font-size: 1.2em;
+      line-height: 1.2;
+      font-weight: 400;
+      font-size: 1.25rem;
       margin: 0;
-      line-height: 1.8;
-      padding: 0.5em;
+      padding: 0.5em 0.8em;
       border-radius: 0.7em;
-
-      
-      box-shadow: 4px 4px 11px #141414;
+      border: 1px solid var(--green-dark);
+      background-image: linear-gradient(
+        to right,
+        var(--red-dark-softer),
+        transparent
+      );
+      box-shadow: 0px 0px 44px var(--black-secondary);
     }
 
     .hero-text {
       font-size: 1.1rem;
       justify-self: center;
       text-align: center;
-
-
+      padding: 0 0.5em;
     }
 
     .hero-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 0;
       margin: 0;
       margin-top: 0.5em;
-      display: flex;
       width: 11em;
-      justify-content: space-between;
-      align-items: center;
       list-style-type: none;
 
-
       a {
-        text-decoration: none;
-
         &:hover {
           .hero-links__icon {
-            transform: scale(1.1);
+            svg {
+              transform: scale(1.1);
+            }
           }
           .hero-links__label {
             transform: translateY(0);
             opacity: 1;
           }
         }
+
       }
 
       .hero-links__icon {
         margin: 0 auto;
         width: 50px;
         height: 50px;
-        transition: all 0.3s ease-out;
+
+        svg {
+          fill: var(--gray-secondary);
+          filter: drop-shadow(0px 0px 44px var(--black-secondary));
+          transition: all 0.3s ease-out;
+        }
       }
 
       .hero-links__icon > img {
-        max-width: 100%;
+        width: 100%;
       }
 
       .hero-links__label {
@@ -108,8 +114,6 @@ const HeroInner = styled.div`
       }
 
       .hero-greet {
-        /* font-size: 1.4em; */
-        /* padding: .5em 0.8em; */
         justify-self: left;
         margin: 0;
         align-self: center;
@@ -120,15 +124,16 @@ const HeroInner = styled.div`
       }
 
       .hero-text {
-        /* font-size: 1.2em; */
         justify-self: left;
         align-self: start;
-        text-align: left;
-        padding: 0.5em;
-
         grid-column: span 1;
+        text-align: left;
+        padding-left: 1em;
+        padding-top: 0;
+        padding-bottom: 0.5em;
         margin-top: 0;
-        border-bottom: 1px solid var(--border-primary);
+        border-bottom: 1px double var(--green-dark);
+
       }
 
       .hero-links {
@@ -141,14 +146,6 @@ const HeroInner = styled.div`
   @media (min-width: 55em) {
     .hero-media {
       margin-top: 1.5em;
-
-      .hero-greet {
-        font-size: 1.3rem;
-      }
-
-      .hero-text {
-        font-size: 1.1rem;
-      }
     }
   }
 `;
