@@ -2,7 +2,6 @@ import * as React from "react";
 import styled from "styled-components";
 
 const Slider = ({ projectList, index, onChangeSlider }) => {
-
   const toThePrevious = () => {
     const isFirstSlide = index === 0;
     const newIndex = isFirstSlide ? projectList.length - 1 : index - 1;
@@ -57,9 +56,10 @@ const Slider = ({ projectList, index, onChangeSlider }) => {
 };
 
 const SliderContainer = styled.div`
+
   width: 100%;
   height: 18em;
-  border-radius: .7em;
+  border-radius: 0.7em;
 
   .slider-points {
     position: absolute;
@@ -92,7 +92,7 @@ const SliderContainer = styled.div`
 
     div.active {
       svg {
-        transform: scale(1.1);
+        transform: scale(1.2);
       }
     }
   }
@@ -107,6 +107,8 @@ const SliderImg = styled.div`
   background-position: center;
   border-radius: 0.7em;
   opacity: 0.7;
+  transition: all 0.3s ease-out;
+
 `;
 
 const LeftArrow = styled.div`
@@ -123,7 +125,6 @@ const LeftArrow = styled.div`
 
 const RightArrow = styled.div`
   font-size: 3.5em;
-
   position: absolute;
   top: 50%;
   right: 0.3em;
@@ -132,7 +133,6 @@ const RightArrow = styled.div`
   color: var(--gray-secondary);
   z-index: 1;
   cursor: pointer;
-
 `;
 
 export default Slider;

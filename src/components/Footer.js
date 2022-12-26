@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <FooterContainer>
       <div className="footer">
-        <div>Developed by <b>Braian Yanquín</b></div> 
+        <div>
+          Developed by <b>Braian Yanquín</b>
+        </div>
       </div>
     </FooterContainer>
   );
@@ -19,9 +21,11 @@ const FooterContainer = styled.div`
   margin: 0 auto;
   display: flex;
   padding: 2.5em;
-  opacity: 0.4;
-  /* background-image: linear-gradient(to top, #432828, transparent);; */
   margin-top: 3em;
+
+  div {
+    opacity: 0.7;
+  }
 
   @media (min-width: 40em) {
     border-top: 1px solid var(--gray-primary);
@@ -29,18 +33,17 @@ const FooterContainer = styled.div`
     border-top-right-radius: 50%;
     box-shadow: 0px -5px 6px 3px var(--green-dark);
 
-
     animation: neon-fade-inverted 5s ease-in-out infinite;
 
-    @keyframes neon-fade-inverted{
+    @keyframes neon-fade-inverted {
       0% {
-        box-shadow: 0px -5px 6px -3px var(--green-dark);
+        box-shadow: 0px -5px 4px -3px var(--green-dark);
       }
       50% {
         box-shadow: none;
       }
       100% {
-        box-shadow: 0px -5px 6px -3px var(--green-dark);
+        box-shadow: 0px -5px 4px -3px var(--green-dark);
       }
     }
   }
@@ -48,7 +51,6 @@ const FooterContainer = styled.div`
   .footer {
     display: flex;
     justify-content: center;
-    
   }
 `;
 

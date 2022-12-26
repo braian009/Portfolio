@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+
 import StartImg from "../../assets/pictures/start.svg";
 import PresentImg from "../../assets/pictures/present.svg";
 import FutureImg from "../../assets/pictures/future.svg";
@@ -7,7 +8,7 @@ import FutureImg from "../../assets/pictures/future.svg";
 const About = () => {
   return (
     <AboutContainer id="about" className="hidden">
-      <h3 className="about-title">About</h3>
+      <h3 className="about-title">My journey</h3>
 
       <AboutInner>
         <div className="about-media">
@@ -17,7 +18,7 @@ const About = () => {
           <div className="about-media__content">
             <h4>How it started</h4>
             <p>
-              In mid 2021 i decided to learn programming through some python
+              In mid 2021 i decided to learn to code through some python
               books not being aware of the several paths in the field, and
               because of that, my journey was only python as a hobby meanwhile i
               was finishing my carrer. After a couple of months, and after done
@@ -106,7 +107,7 @@ const AboutInner = styled.div`
     background-image: linear-gradient(
       to right,
       var(--red-dark-softer),
-      transparent
+      hsla(182, 54%, 4%, 0.4)
     );
     box-shadow: 0px 0px 22px var(--black-secondary);
     border: 1px solid var(--green-dark);

@@ -27,7 +27,7 @@ const HeroInner = styled.div`
     }
 
     .hero-greet {
-      line-height: 1.2;
+      line-height: 1.1;
       font-weight: 400;
       font-size: 1.25rem;
       margin: 0;
@@ -37,9 +37,9 @@ const HeroInner = styled.div`
       background-image: linear-gradient(
         to right,
         var(--red-dark-softer),
-        transparent
+        hsla(182, 54%, 4%, 0.4)
       );
-      box-shadow: 0px 0px 44px var(--black-secondary);
+      box-shadow: 0px 0px 22px var(--black-secondary);
     }
 
     .hero-text {
@@ -71,7 +71,6 @@ const HeroInner = styled.div`
             opacity: 1;
           }
         }
-
       }
 
       .hero-links__icon {
@@ -82,7 +81,7 @@ const HeroInner = styled.div`
         svg {
           fill: var(--gray-secondary);
           filter: drop-shadow(0px 0px 44px var(--black-secondary));
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
         }
       }
 
@@ -97,7 +96,7 @@ const HeroInner = styled.div`
         color: var(--font-color);
         text-decoration: none;
         transform: translateY(-0.5em);
-        transition: opacity 0.3s linear, transform 0.3s linear;
+        transition: opacity 0.2s linear, transform 0.2s ease-out;
       }
     }
   }
@@ -115,12 +114,10 @@ const HeroInner = styled.div`
 
       .hero-greet {
         justify-self: left;
-        margin: 0;
         align-self: center;
         text-align: left;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
-
       }
 
       .hero-text {
@@ -133,7 +130,6 @@ const HeroInner = styled.div`
         padding-bottom: 0.5em;
         margin-top: 0;
         border-bottom: 1px double var(--green-dark);
-
       }
 
       .hero-links {

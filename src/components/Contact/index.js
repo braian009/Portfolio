@@ -1,10 +1,13 @@
 import * as React from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
+
+import ContactInner from "./ContactInner";
+
+
 import LinkedinLogo from "../../assets/icons/linkedin.svg";
 import WhatsappLogo from "../../assets/icons/whatsapp.svg";
 
-import ContactInner from "./ContactInner";
 
 const Contact = () => {
   const formRef = React.useRef();

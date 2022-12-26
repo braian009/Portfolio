@@ -17,24 +17,28 @@ const NavMenu = styled.nav`
     right: 0;
     margin: 0;
     overflow: hidden;
-    transition: height 0.2s ease-out 0s;
+    transition: height 0.2s ease-out;
 
     background-color: hsla(5, 21%, 14%, 0.8);
     backdrop-filter: blur(14.7px);
     border-bottom-right-radius: 0.7em;
     border-bottom-left-radius: 0.7em;
 
-    & a {
+    li {
+      width: 100%;
+    }
+
+    a {
       font-size: 1.1rem;
       color: var(--font-size);
       display: block;
       text-align: center;
-      padding: 1em 1em;
+      padding: 1.25em 1.25em;
       text-decoration: none;
-      transition: transform 0.2s ease-out 0s;
+      transition: transform 0.2s ease-out;
     }
 
-    & a:hover {
+    a:hover {
       transform: scale(1.1);
     }
 

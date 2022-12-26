@@ -17,14 +17,13 @@ const ProjectsInner = styled.div`
 
   border: 1px solid var(--green-dark);
   box-shadow: 0px 0px 22px var(--black-secondary);
+  background-color: hsla(182, 54%, 4%, 0.2);
+
 
   .slider {
     grid-column: span 1;
     grid-row: span 1;
   }
-
-  
-
 
   .projects-info {
     align-self: start;
@@ -33,6 +32,7 @@ const ProjectsInner = styled.div`
     grid-row: span 1;
     text-align: center;
     margin-top: 1em;
+    
 
     * + * {
       margin: 0;
@@ -42,6 +42,7 @@ const ProjectsInner = styled.div`
       font-size: 1.1em;
       margin-top: 0;
       margin-bottom: 0.25em;
+      
     }
 
     p {
@@ -67,7 +68,7 @@ const ProjectsInner = styled.div`
             line-height: 2.5;
             letter-spacing: 0.01em;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             padding: 0.4em 0.7em;
             color: var(--black-primary);
             background-color: var(--gray-secondary);
@@ -78,35 +79,35 @@ const ProjectsInner = styled.div`
     }
 
     .projects-links {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 1.5em;
-    justify-content: center;
+      display: flex;
+      margin: 0 auto;
+      margin-top: 1.5em;
+      justify-content: center;
 
-    div {
-      line-height: 1.2;
-      border-radius: 20px;
-      border: 2px solid var(--green-dark);
-      transition: background-color .2s ease-out;
+      div {
+        line-height: 1.2;
+        border-radius: 20px;
+        border: 2px solid var(--green-dark);
+        transition: background-color 0.2s ease-out;
 
-      &:hover {
-        background-color: var(--green-dark);
+        &:hover {
+          background-color: var(--green-dark);
+        }
+      }
+      * + * {
+        margin-left: 1em;
+      }
+
+      a {
+        line-height: 1;
+        display: block;
+        font-size: 0.85;
+        color: var(--gray-secondary);
+        background-color: none;
+        padding: 0.5em 0.8em;
+        border-radius: 20px;
       }
     }
-    * + * {
-      margin-left: 1em;
-    }
-
-    a {
-      display: block;
-      font-size: 0.85;
-      color: var(--gray-secondary);
-      background-color: none;
-      padding: 0.4em 0.8em;
-      border-radius: 20px;
-
-    }
-  }
   }
 
   @media (min-width: 60em) {
@@ -131,12 +132,9 @@ const ProjectsInner = styled.div`
       margin-top: 0;
 
       .projects-links {
-      justify-content: flex-start;
+        justify-content: flex-start;
+      }
     }
-    }
-
-    
-
   }
 `;
 

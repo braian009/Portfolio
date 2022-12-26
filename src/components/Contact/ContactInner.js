@@ -12,6 +12,9 @@ const ContactInner = styled.div`
   border-radius: 0.7em;
   border: 1px solid var(--green-dark);
   box-shadow: 0px 0px 22px var(--black-secondary);
+  background-color: hsla(182, 54%, 4%, 0.2);
+  
+  
 
   .sending-backdrop {
     position: absolute;
@@ -87,6 +90,9 @@ const ContactInner = styled.div`
       &:hover {
         transform: scale(1.1);
       }
+      
+        fill: black;
+
     }
   }
 
@@ -143,10 +149,12 @@ const ContactInner = styled.div`
       color: var(--font-color);
       border-radius: 20px;
       border: 1px solid var(--green-dark);
+      transition: all .2s ease-out;
       cursor: pointer;
 
+
       &:hover {
-        background: hsla(182, 44%, 14%, 0.1);
+        background-color: var(--green-dark);
       }
     }
   }

@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+
 import projectList from "./projectList";
 
 import ProjectsInner from "./ProjectsInner";
@@ -7,8 +8,6 @@ import Slider from "./Slider";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-
-  console.log(projectList);
 
   return (
     <ProjectsContainer id="projects" className="hidden">

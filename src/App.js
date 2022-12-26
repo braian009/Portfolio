@@ -20,8 +20,7 @@ const App = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("shown");
-        }
-         else {
+        } else {
           entry.target.classList.remove("shown");
         }
       });
@@ -85,14 +84,12 @@ const ArrowLink = styled.div`
   bottom: 1.5em;
   transition: all 0.2s linear;
   z-index: 100;
-  background-color: hsla(5, 21%, 14%, 0.8);
-    backdrop-filter: blur(14.7px);
+  background-color: var(--red-dark-softer);
+  backdrop-filter: blur(14.7px);
 
   img {
     max-width: 100%;
     border-radius: 50%;
-
-    
   }
 
   &.shown {

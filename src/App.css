@@ -1,93 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 :root {
-    box-sizing: border-box;
-    font-size: calc(0.7em + 1vw);
-    --gray-primary: #70707080;
-    --gray-secondary: #b1abab;
-    --green-dark: hsl(182, 44%, 14%);
-    --red-dark: hsla(5, 21%, 14%, 0.8);
-    --red-dark-solid: hsla(5, 21%, 14%, 1);
-    --red-dark-softer: hsla(5, 21%, 14%, 0.4);
-    --black-primary: #212529;
-    --black-secondary: #272727;
-    --white-primary: #e4e4e4;
-    --font-color: #ababab;
-    --title-color: #d4d4d4;
+  box-sizing: border-box;
+  font-size: calc(0.7em + 1vw);
+  --gray-primary: #70707080;
+  --gray-secondary: #b1abab;
+  --green-dark: hsl(182, 44%, 14%);
+  --red-dark: hsla(5, 21%, 14%, 0.8);
+  --red-dark-solid: hsla(5, 21%, 14%, 1);
+  --red-dark-softer: hsla(5, 21%, 11%, 0.4);
+  --black-primary: #1f1f1f;
+  --black-secondary: #2b2b2b;
+  --white-primary: #e4e4e4;
+  --font-color: #ababab;
+  --title-color: #d4d4d4;
+}
 
-    --bordo: rgb(109, 66, 66);
-    --obscure-bordo: hsl(0, 25%, 21%);
-    --obscure-petroll: hsla(182, 44%, 14%, 0.3);
-    --purple: #49182d;
-    --bordoo: #43282866;
-    --bluee: hsla(0, 25%, 21%, 0.2);
-  
-    --blue: hsl(193, 25%, 34%);
-    --yelloww: hsl(67, 40%, 30%);
-    --another: hsl(13, 25%, 34%);
-    --obscure-petrol: hsla(182, 44%, 11%, 0.5);
-    --black: #1e50ff;
+@media (min-width: 30em) {
+  :root {
+    font-size: calc(0.65em + 1vw);
   }
+}
 
-  @media (min-width: 30em) {
-    :root {
-      font-size: calc(0.65em + 1vw);
-    }
+@media (min-width: 40em) {
+  :root {
+    font-size: 1rem;
   }
+}
 
-  @media (min-width: 40em) {
-    :root {
-      font-size: 1rem;
-    }
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  body {
-    min-height: 100vh;
-    line-height: 1.3;
-    margin: 0;
-    font-family: "Inter", Helvetica, Arial, sans-serif;
-    /* background-image: linear-gradient(
-      to top,
-      hsl(204, 3%, 17%),
-      hsl(204, 1%, 15%)
-    ); */
-    /* background-color: hsl(204, 3%, 15%); */
-    /* background-color: #1c1c1c; */
-  
-    background-color: #202020;
-    background-image: linear-gradient(to right, hsl(182, 11%, 7%), hsl(182, 11%, 5%), hsl(182, 11%, 7%) );
-  
-    
-    color: var(--font-color);
-  
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: var(--title-color);
-    letter-spacing: 0.02em;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-  a {
-    text-decoration: none;
-  }
-  
+body {
+  min-height: 100vh;
+  line-height: 1.3;
+  margin: 0;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
+
+  background-color: #202020;
+  background-image: linear-gradient(
+    to right,
+    hsl(182, 11%, 7%),
+    hsl(182, 11%, 5%),
+    hsl(182, 11%, 7%)
+  );
+  color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  letter-spacing: 0.02em;
+}
+
+a {
+  text-decoration: none;
+}
 
 .hidden {
-    opacity: 0;
-    transition: opacity .4s linear;
+  opacity: 0;
+  transition: opacity 0.4s linear;
 }
 
 .shown {
-    opacity: 1;
-
+  opacity: 1;
 }
-

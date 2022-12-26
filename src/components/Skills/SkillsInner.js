@@ -1,17 +1,12 @@
 import styled from "styled-components";
 
 const SkillsInner = styled.div`
-
-width: 90%;
-max-width: 890px;
-
-margin: 0 auto;
-
-
+  width: 90%;
+  max-width: 890px;
+  margin: 0 auto;
 
   .skills-info {
     text-align: center;
-    
   }
 
   .skills-info__text {
@@ -36,8 +31,6 @@ margin: 0 auto;
     margin-top: 1.5em;
     border-bottom: 1px solid var(--green-dark);
     border-top: 1px solid var(--green-dark);
-
-    
   }
 `;
 

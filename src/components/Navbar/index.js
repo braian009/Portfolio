@@ -31,7 +31,7 @@ const Navbar = () => {
           <ul className={`menu-list ${isActive ? "is-active" : ""}`}>
             <li>
               <Link to="#about" smooth>
-                About
+                Journey
               </Link>
             </li>
             <li>
@@ -75,11 +75,6 @@ const NavbarContainer = styled.div`
   max-width: 1080px;
   margin: 0 auto;
   position: relative;
-  
-
-  /* background-image: linear-gradient(to bottom, var(--obscure-petroll), transparent); */
-  /* background-color: var(--obscure-petroll); */
-
 
   padding: 1.5em 1em;
   z-index: 10;

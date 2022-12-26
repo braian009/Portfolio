@@ -1,9 +1,11 @@
 import * as React from "react";
 
 import styled from "styled-components";
-import profilepic from "../../assets/pictures/portfoliopicture.jpg";
+
 import { ReactComponent as LinkedIn } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as Github } from "../../assets/icons/github.svg";
+import profilepic from "../../assets/pictures/portfoliopicture.jpg";
+
 
 import HeroInner from "./HeroInner";
 
@@ -16,11 +18,11 @@ const Hero = () => {
             <img className="hero-img" src={profilepic} alt="foto"></img>
           </div>
           <h3 className="hero-greet">
-            Hi!, I'm <b>Braian.</b>
+            Hi!, I'm <b>Braian</b>
           </h3>
 
           <div className="hero-text">
-            a self-taught developer based in Rio Negro, Argentina, driven by the
+            A self-taught developer based in Rio Negro, Argentina, driven by the
             curiosity and the ambition to learn, currently looking for a job to
             solidify and expand my knowledge.
           </div>
