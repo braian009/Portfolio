@@ -18,12 +18,12 @@ const Hero = () => {
             <img className="hero-img" src={profilepic} alt="foto"></img>
           </div>
           <h3 className="hero-greet">
-            Hi!, I'm <b>Braian</b>
+            Hi, I'm <b>Braian</b>!
           </h3>
 
           <div className="hero-text">
-            A self-taught developer based in Rio Negro, Argentina, driven by the
-            curiosity and the ambition to learn, currently looking for a job to
+            A self-taught developer based in Argentina, driven by the
+            curiosity and the ambition to learn, currently looking for a long-term job to
             solidify and expand my knowledge.
           </div>
           <ul className="hero-links">
@@ -36,7 +36,7 @@ const Hero = () => {
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/braian-yanquin-90446025b" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/braian-yanquin" target="_blank" rel="noopener noreferrer">
                 <div className="hero-links__icon">
                   <LinkedIn />
                 </div>

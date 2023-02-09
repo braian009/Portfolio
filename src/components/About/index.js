@@ -18,12 +18,12 @@ const About = () => {
           <div className="about-media__content">
             <h4>How it started</h4>
             <p>
-              In mid 2021 i decided to learn to code through some python
+              In mid 2021 I decided to learn to code through some python
               books not being aware of the several paths in the field, and
-              because of that, my journey was only python as a hobby meanwhile i
+              because of that, my journey was only python as a hobby meanwhile I
               was finishing my carrer. After a couple of months, and after done
               some trivial automations, I decided to learn django and rest
-              framework, and along with it, postgres through pgAdmin.
+              framework, and along with it, postgreSQL through pgAdmin.
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const About = () => {
           <div className="about-media__content">
             <h4>How it goes</h4>
             <p>
-              After that 'backend base', and after picking JavaScript in mid 2022,
+              After that 'backend base', and after picking JavaScript in early 2022,
               I am building projects that help me solidify my knowledge while
               demonstrating it, focused on the frontend through the use of react
               and having a lot of fun trying to gain experience in the

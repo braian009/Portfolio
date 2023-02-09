@@ -4,10 +4,8 @@ import styled from "styled-components";
 
 import ContactInner from "./ContactInner";
 
-
 import LinkedinLogo from "../../assets/icons/linkedin.svg";
 import WhatsappLogo from "../../assets/icons/whatsapp.svg";
-
 
 const Contact = () => {
   const formRef = React.useRef();
@@ -84,12 +82,22 @@ const Contact = () => {
         </div>
         <ul className="contact-sidebar">
           <li>
-            <a className="contact-sidebar__link" href="https://linkedin.com/in/braian-yanquin-90446025b" target="_blank" rel="noopener noreferrer">
+            <a
+              className="contact-sidebar__link"
+              href="https://linkedin.com/in/braian-yanquin"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={LinkedinLogo} alt="react"></img>
             </a>
           </li>
           <li>
-            <a className="contact-sidebar__link" href="https://wa.me/5492944700327" target="_blank" rel="noopener noreferrer">
+            <a
+              className="contact-sidebar__link"
+              href="https://wa.me/5492944700327"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={WhatsappLogo} alt="whatsapp"></img>
             </a>
           </li>
